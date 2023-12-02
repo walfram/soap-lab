@@ -24,7 +24,7 @@ public class WsConfig extends WsConfigurerAdapter {
     return new ServletRegistrationBean<>(servlet, "/ws/*");
   }
 
-  @Bean(name = "petsWsdl")
+  @Bean(name = "pets-service")
   public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema schema)
   {
     DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
