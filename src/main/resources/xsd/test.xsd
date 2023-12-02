@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://emta.ee/cesop"
+  xmlns:xmime="http://www.w3.org/2005/05/xmlmime"
+  targetNamespace="http://emta.ee/pets"
+  elementFormDefault="qualified">
+
+  <xs:complexType name="Pets">
+    <xs:sequence>
+      <xs:element name="dog" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="cat" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="mouse" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="raven" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
