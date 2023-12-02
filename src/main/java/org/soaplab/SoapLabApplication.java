@@ -1,4 +1,4 @@
-package ee.helmes.soaplab;
+package org.soaplab;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

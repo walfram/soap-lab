@@ -1,4 +1,4 @@
-package ee.helmes.soaplab;
+package org.soaplab;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
