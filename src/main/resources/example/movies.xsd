@@ -3,6 +3,8 @@
   targetNamespace="http://www.javaspringclub.com/movies-ws"
   elementFormDefault="qualified">
 
+  <!-- https://www.javaspringclub.com/publish-and-consume-soap-web-services-using-spring-boot-part-1/ -->
+  
   <xs:element name="getMovieByIdRequest">
     <xs:complexType>
       <xs:sequence>
