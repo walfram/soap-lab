@@ -24,6 +24,7 @@ public class WsConfig extends WsConfigurerAdapter {
     return new ServletRegistrationBean<>(servlet, "/ws/*");
   }
 
+  // https://docs.spring.io/spring-ws/docs/current/reference/html/#server-automatic-wsdl-exposure
   @Bean(name = "pets-service")
   public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema schema)
   {
