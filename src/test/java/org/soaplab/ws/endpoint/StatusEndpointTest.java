@@ -1,6 +1,8 @@
 package org.soaplab.ws.endpoint;
 
 import static org.springframework.ws.test.server.ResponseMatchers.noFault;
+import static org.springframework.ws.test.server.ResponseMatchers.soapEnvelope;
+import static org.springframework.ws.test.server.ResponseMatchers.validPayload;
 
 import java.io.IOException;
 import org.junit.jupiter.api.Test;
@@ -23,8 +25,9 @@ class StatusEndpointTest {
         new ClassPathResource("ws/status-endpoint-valid-status-request.xml"));
 
     mockClient.sendRequest(request)
-        .andExpect(noFault());
+        .andExpect(noFault())
+        .andExpect(validPayload(new ClassPathResource("xsd/protocol.xsd")))
+        .andExpect(soapEnvelope(new ClassPathResource("ws/status-endpoint-valid-status-response.xml")));
   }
   
-
 }

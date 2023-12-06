@@ -15,9 +15,9 @@ import org.springframework.xml.xsd.XsdSchema;
 @EnableWs
 @Configuration
 public class WsConfig extends WsConfigurerAdapter {
+
   @Bean
-  public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(ApplicationContext applicationContext)
-  {
+  public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(ApplicationContext applicationContext) {
     MessageDispatcherServlet servlet = new MessageDispatcherServlet();
     servlet.setApplicationContext(applicationContext);
     servlet.setTransformWsdlLocations(true);
@@ -26,8 +26,7 @@ public class WsConfig extends WsConfigurerAdapter {
 
   // https://docs.spring.io/spring-ws/docs/current/reference/html/#server-automatic-wsdl-exposure
   @Bean(name = "pets-service")
-  public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema schema)
-  {
+  public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema schema) {
     DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
     wsdl11Definition.setPortTypeName("PetsPort");
     wsdl11Definition.setLocationUri("/ws");
@@ -37,8 +36,7 @@ public class WsConfig extends WsConfigurerAdapter {
   }
 
   @Bean
-  public XsdSchema petsSchema()
-  {
+  public XsdSchema petsSchema() {
     return new SimpleXsdSchema(new ClassPathResource("xsd/protocol.xsd"));
   }
 }

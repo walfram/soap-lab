@@ -4,35 +4,23 @@
   targetNamespace="http://soap.lab/pets"
   elementFormDefault="qualified">
 
-  <xs:complexType name="PetsRequest"/>
-  
-  <xs:complexType name="PetResponseItem">
+  <xs:element name="StatusRequest">
+    <xs:complexType/>
+  </xs:element>
+
+  <xs:complexType name="StatusResponseType">
     <xs:sequence>
-      <xs:element name="type" type="xs:string" />
-      <xs:element name="data" type="xs:string" />
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="message" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
-  
-  <xs:complexType name="PetsResponse">
-    <xs:sequence>
-      <xs:element name="items" type="PetResponseItem" />
-    </xs:sequence>
-  </xs:complexType>
-  
-  <xs:complexType name="StatusResponse">
-    <xs:sequence>
-      <xs:element name="code" type="xs:string" />
-      <xs:element name="message" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  
-  <xs:complexType name="Pets">
-    <xs:sequence>
-      <xs:element name="dog" type="xs:string" maxOccurs="unbounded"/>
-      <xs:element name="cat" type="xs:string"/>
-      <xs:element name="mouse" type="xs:string"/>
-      <xs:element name="raven" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
+
+  <xs:element name="StatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="response" type="StatusResponseType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 
 </xs:schema>

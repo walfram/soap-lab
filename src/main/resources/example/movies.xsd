@@ -20,6 +20,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  
   <xs:complexType name="movieType">
     <xs:sequence>
       <xs:element name="movieId" type="xs:long"/>
@@ -31,6 +32,7 @@
   <xs:element name="getAllMoviesRequest">
     <xs:complexType/>
   </xs:element>
+  
   <xs:element name="getAllMoviesResponse">
     <xs:complexType>
       <xs:sequence>
@@ -38,12 +40,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  
   <xs:complexType name="serviceStatus">
     <xs:sequence>
       <xs:element name="statusCode" type="xs:string"/>
       <xs:element name="message" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
+  
   <xs:element name="addMovieRequest">
     <xs:complexType>
       <xs:sequence>
@@ -52,6 +56,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  
   <xs:element name="addMovieResponse">
     <xs:complexType>
       <xs:sequence>
@@ -60,6 +65,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  
   <xs:element name="updateMovieRequest">
     <xs:complexType>
       <xs:sequence>
@@ -68,6 +74,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  
   <xs:element name="updateMovieResponse">
     <xs:complexType>
       <xs:sequence>
@@ -75,6 +82,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  
   <xs:element name="deleteMovieRequest">
     <xs:complexType>
       <xs:sequence>
@@ -82,6 +90,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  
   <xs:element name="deleteMovieResponse">
     <xs:complexType>
       <xs:sequence>
