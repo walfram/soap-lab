@@ -4,6 +4,28 @@
   targetNamespace="http://soap.lab/pets"
   elementFormDefault="qualified">
 
+  <xs:complexType name="PetsRequest"/>
+  
+  <xs:complexType name="PetResponseItem">
+    <xs:sequence>
+      <xs:element name="type" type="xs:string" />
+      <xs:element name="data" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="PetsResponse">
+    <xs:sequence>
+      <xs:element name="items" type="PetResponseItem" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="StatusResponse">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string" />
+      <xs:element name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  
   <xs:complexType name="Pets">
     <xs:sequence>
       <xs:element name="dog" type="xs:string" maxOccurs="unbounded"/>

@@ -1,0 +1,10 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <StatusRequest>
+      <code>200</code>
+      <message>OK</message>
+    </StatusRequest>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
