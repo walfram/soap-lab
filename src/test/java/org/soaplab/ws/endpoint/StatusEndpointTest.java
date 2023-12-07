@@ -6,14 +6,17 @@ import static org.springframework.ws.test.server.ResponseMatchers.validPayload;
 
 import java.io.IOException;
 import org.junit.jupiter.api.Test;
+import org.soaplab.config.WsConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.webservices.server.WebServiceServerTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.ws.test.server.MockWebServiceClient;
 import org.springframework.ws.test.server.RequestCreator;
 import org.springframework.ws.test.server.RequestCreators;
 
 @WebServiceServerTest(StatusEndpoint.class)
+@Import({WsConfig.class})
 class StatusEndpointTest {
 
   @Autowired
