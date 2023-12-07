@@ -2,10 +2,8 @@
   <SOAP-ENV:Header/>
   <SOAP-ENV:Body>
     <ns2:StatusResponse xmlns:ns2="http://soap.lab/pets">
-      <ns2:response>
-        <ns2:code>200</ns2:code>
-        <ns2:message>OK</ns2:message>
-      </ns2:response>
+      <ns2:code>200</ns2:code>
+      <ns2:message>OK</ns2:message>
     </ns2:StatusResponse>
   </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

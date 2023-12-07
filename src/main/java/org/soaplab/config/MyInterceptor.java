@@ -31,6 +31,6 @@ public class MyInterceptor implements EndpointInterceptor {
 
   @Override
   public void afterCompletion(MessageContext messageContext, Object endpoint, Exception ex) throws Exception {
-    logger.debug("*** AFTER COMPLETION, message = {}, endpoint = {}, exception = {}", messageContext, endpoint, ex.getMessage());
+    logger.debug("*** AFTER COMPLETION, message = {}, endpoint = {}, exception = {}", messageContext, endpoint, ex);
   }
 }

@@ -8,17 +8,11 @@
     <xs:complexType/>
   </xs:element>
 
-  <xs:complexType name="StatusResponseType">
-    <xs:sequence>
-      <xs:element name="code" type="xs:string"/>
-      <xs:element name="message" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
-
   <xs:element name="StatusResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="response" type="StatusResponseType"/>
+        <xs:element name="code" type="xs:int"/>
+        <xs:element name="message" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
