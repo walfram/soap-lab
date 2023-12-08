@@ -16,22 +16,23 @@ import org.springframework.ws.test.server.MockWebServiceClient;
 import org.springframework.ws.test.server.RequestCreator;
 import org.springframework.ws.test.server.RequestCreators;
 
-@WebServiceServerTest(endpoints = {StatusEndpoint.class}, excludeAutoConfiguration = {WebServicesAutoConfiguration.class})
+@WebServiceServerTest(endpoints = {UploadEndpoint.class}, excludeAutoConfiguration = {WebServicesAutoConfiguration.class})
 @Import({WsConfig.class})
-class StatusEndpointTest {
+class UploadEndpointTest {
 
   @Autowired
   MockWebServiceClient mockClient;
-
+  
   @Test
-  void should_return_status_200_OK() throws IOException {
+  void should_upload_file() throws IOException {
     RequestCreator request = RequestCreators.withSoapEnvelope(
-        new ClassPathResource("ws/status-request.xml"));
-
-    mockClient.sendRequest(request)
+        new ClassPathResource("ws/upload-request.xml"));
+    
+    mockClient
+        .sendRequest(request)
         .andExpect(noFault())
         .andExpect(validPayload(new ClassPathResource("xsd/protocol.xsd")))
-        .andExpect(soapEnvelope(new ClassPathResource("ws/status-response.xml")));
+        .andExpect(soapEnvelope(new ClassPathResource("ws/upload-response.xml")));
   }
-
+  
 }

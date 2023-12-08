@@ -1,0 +1,3 @@
+<pets:UploadFileRequest xmlns:pets="http://soap.lab/pets">
+  <pets:content>12345677</pets:content>
+</pets:UploadFileRequest>

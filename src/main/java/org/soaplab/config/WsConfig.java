@@ -1,5 +1,6 @@
 package org.soaplab.config;
 
+import java.util.Collections;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,9 +9,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.ws.config.annotation.EnableWs;
 import org.springframework.ws.config.annotation.WsConfigurerAdapter;
 import org.springframework.ws.server.EndpointInterceptor;
+import org.springframework.ws.server.endpoint.adapter.DefaultMethodEndpointAdapter;
+import org.springframework.ws.server.endpoint.adapter.method.MarshallingPayloadMethodProcessor;
 import org.springframework.ws.soap.server.endpoint.interceptor.SoapEnvelopeLoggingInterceptor;
 import org.springframework.ws.transport.http.MessageDispatcherServlet;
 import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
@@ -52,4 +56,27 @@ public class WsConfig extends WsConfigurerAdapter {
   public XsdSchema petsSchema() {
     return new SimpleXsdSchema(new ClassPathResource("xsd/protocol.xsd"));
   }
+
+  // https://github.com/spring-projects/spring-ws-samples/blob/main/mtom/server/src/main/java/org/springframework/ws/samples/mtom/config/MtomServerConfiguration.java
+  @Bean
+  public Jaxb2Marshaller marshaller() {
+    Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
+    marshaller.setContextPath("lab.soap.pets");
+    marshaller.setMtomEnabled(true);
+    return marshaller;
+  }
+
+  @Bean
+  public MarshallingPayloadMethodProcessor methodProcessor(Jaxb2Marshaller marshaller) {
+    return new MarshallingPayloadMethodProcessor(marshaller);
+  }
+
+  @Bean
+  public DefaultMethodEndpointAdapter endpointAdapter(MarshallingPayloadMethodProcessor methodProcessor) {
+    DefaultMethodEndpointAdapter adapter = new DefaultMethodEndpointAdapter();
+    adapter.setMethodArgumentResolvers(Collections.singletonList(methodProcessor));
+    adapter.setMethodReturnValueHandlers(Collections.singletonList(methodProcessor));
+    return adapter;
+  }
+  
 }

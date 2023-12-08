@@ -33,6 +33,12 @@ dependencies {
 	testImplementation 'org.springframework.ws:spring-ws-test'
 }
 
+test {
+	testLogging {
+		showStandardStreams = true
+	}
+}
+
 tasks.named('bootBuildImage') {
 	builder = 'paketobuildpacks/builder-jammy-base:latest'
 }

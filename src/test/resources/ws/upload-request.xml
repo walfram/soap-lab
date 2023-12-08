@@ -1,0 +1,9 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pets="http://soap.lab/pets">
+  <SOAP-ENV:Header>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <pets:UploadFileRequest>
+      <pets:content>12345677</pets:content>
+    </pets:UploadFileRequest>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
