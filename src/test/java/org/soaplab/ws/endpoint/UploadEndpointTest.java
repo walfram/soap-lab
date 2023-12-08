@@ -27,7 +27,7 @@ class UploadEndpointTest {
   void should_upload_file() throws IOException {
     RequestCreator request = RequestCreators.withSoapEnvelope(
         new ClassPathResource("ws/upload-request.xml"));
-    
+
     mockClient
         .sendRequest(request)
         .andExpect(noFault())
