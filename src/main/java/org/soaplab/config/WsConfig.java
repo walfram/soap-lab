@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.soaplab.Namespace;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -61,7 +62,7 @@ public class WsConfig extends WsConfigurerAdapter {
   @Bean
   public Jaxb2Marshaller marshaller() {
     Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-    marshaller.setContextPath("lab.soap.pets");
+    marshaller.setContextPath(Namespace.CONTEXT_PATH);
     marshaller.setMtomEnabled(true);
     return marshaller;
   }
