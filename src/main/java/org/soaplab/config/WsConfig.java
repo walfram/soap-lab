@@ -16,6 +16,7 @@ import org.springframework.ws.config.annotation.WsConfigurerAdapter;
 import org.springframework.ws.server.EndpointInterceptor;
 import org.springframework.ws.server.endpoint.adapter.DefaultMethodEndpointAdapter;
 import org.springframework.ws.server.endpoint.adapter.method.MarshallingPayloadMethodProcessor;
+import org.springframework.ws.server.endpoint.adapter.method.MessageContextMethodArgumentResolver;
 import org.springframework.ws.soap.server.endpoint.interceptor.SoapEnvelopeLoggingInterceptor;
 import org.springframework.ws.transport.http.MessageDispatcherServlet;
 import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
@@ -75,8 +76,12 @@ public class WsConfig extends WsConfigurerAdapter {
   @Bean
   public DefaultMethodEndpointAdapter endpointAdapter(MarshallingPayloadMethodProcessor methodProcessor) {
     DefaultMethodEndpointAdapter adapter = new DefaultMethodEndpointAdapter();
-    adapter.setMethodArgumentResolvers(Collections.singletonList(methodProcessor));
-    adapter.setMethodReturnValueHandlers(Collections.singletonList(methodProcessor));
+    
+    adapter.setMethodArgumentResolvers(List.of(methodProcessor, new MessageContextMethodArgumentResolver()));
+    adapter.setMethodReturnValueHandlers(List.of(methodProcessor));
+    
+    logger.info("method args resolvers = {}", adapter.getMethodArgumentResolvers());
+    
     return adapter;
   }
   

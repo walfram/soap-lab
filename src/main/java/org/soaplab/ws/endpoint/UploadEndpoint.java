@@ -1,11 +1,11 @@
 package org.soaplab.ws.endpoint;
 
-import java.util.UUID;
 import lab.soap.pets.UploadFileRequest;
 import lab.soap.pets.UploadFileResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.soaplab.Namespace;
+import org.springframework.ws.context.MessageContext;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -18,9 +18,10 @@ public class UploadEndpoint {
 
   @PayloadRoot(localPart = "UploadFileRequest", namespace = Namespace.NAMESPACE)
   @ResponsePayload
-  public UploadFileResponse upload(@RequestPayload UploadFileRequest request) {
+  public UploadFileResponse upload(@RequestPayload UploadFileRequest request, MessageContext messageContext) {
     logger.debug("file upload request = {}", request);
     logger.debug("file = {}", request.getContent());
+    logger.debug("message context = {}", messageContext);
 
     UploadFileResponse uploadFileResponse = new UploadFileResponse();
     uploadFileResponse.setFileId("1234");
