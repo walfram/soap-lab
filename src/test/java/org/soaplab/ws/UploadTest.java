@@ -8,6 +8,7 @@ import jakarta.activation.URLDataSource;
 import java.io.IOException;
 import javax.xml.namespace.QName;
 import lab.soap.pets.UploadFileRequest;
+import lab.soap.pets.UploadFileResponse;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,7 +40,7 @@ class UploadTest {
     DataHandler content = new DataHandler(dataSource);
     request.setContent(content);
 
-    Object response = client.getWebServiceTemplate().marshalSendAndReceive(request, message -> {
+    UploadFileResponse response = (UploadFileResponse) client.getWebServiceTemplate().marshalSendAndReceive(request, message -> {
       SoapMessage soapMessage = (SoapMessage)message;
       SoapHeader header = soapMessage.getSoapHeader();
 
@@ -48,8 +49,9 @@ class UploadTest {
     });
     
     logger.debug("response = {}", response);
-
+    
     assertNotNull(response);
+    assertNotNull(response.getFileId());
   }
 
 }
