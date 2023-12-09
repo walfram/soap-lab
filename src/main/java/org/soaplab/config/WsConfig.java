@@ -17,6 +17,10 @@ import org.springframework.ws.server.EndpointInterceptor;
 import org.springframework.ws.server.endpoint.adapter.DefaultMethodEndpointAdapter;
 import org.springframework.ws.server.endpoint.adapter.method.MarshallingPayloadMethodProcessor;
 import org.springframework.ws.server.endpoint.adapter.method.MessageContextMethodArgumentResolver;
+import org.springframework.ws.server.endpoint.adapter.method.XPathParamMethodArgumentResolver;
+import org.springframework.ws.server.endpoint.adapter.method.dom.DomPayloadMethodProcessor;
+import org.springframework.ws.server.endpoint.adapter.method.jaxb.XmlRootElementPayloadMethodProcessor;
+import org.springframework.ws.soap.server.endpoint.adapter.method.SoapHeaderElementMethodArgumentResolver;
 import org.springframework.ws.soap.server.endpoint.interceptor.SoapEnvelopeLoggingInterceptor;
 import org.springframework.ws.transport.http.MessageDispatcherServlet;
 import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
@@ -77,7 +81,9 @@ public class WsConfig extends WsConfigurerAdapter {
   public DefaultMethodEndpointAdapter endpointAdapter(MarshallingPayloadMethodProcessor methodProcessor) {
     DefaultMethodEndpointAdapter adapter = new DefaultMethodEndpointAdapter();
     
-    adapter.setMethodArgumentResolvers(List.of(methodProcessor, new MessageContextMethodArgumentResolver()));
+    adapter.setMethodArgumentResolvers(
+        List.of(methodProcessor, new MessageContextMethodArgumentResolver(), new SoapHeaderElementMethodArgumentResolver())
+    );
     adapter.setMethodReturnValueHandlers(List.of(methodProcessor));
     
     logger.info("method args resolvers = {}", adapter.getMethodArgumentResolvers());
