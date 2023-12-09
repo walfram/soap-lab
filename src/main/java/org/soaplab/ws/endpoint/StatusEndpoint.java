@@ -15,7 +15,7 @@ public class StatusEndpoint {
 
   private static final Logger logger = LoggerFactory.getLogger(StatusEndpoint.class);
   
-  @PayloadRoot(localPart = "StatusRequest", namespace = Namespace.NAMESPACE)
+  @PayloadRoot(localPart = "StatusRequest", namespace = Namespace.URI)
   @ResponsePayload
   public StatusResponse status(@RequestPayload StatusRequest request) {
     logger.debug("received status request = {}", request);

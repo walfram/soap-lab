@@ -9,6 +9,7 @@ import java.io.IOException;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.soaplab.Namespace;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
@@ -25,7 +26,7 @@ public class MarshallingProcessorTest {
   Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
 
   {
-    marshaller.setContextPath("lab.soap.pets");
+    marshaller.setContextPath(Namespace.CONTEXT_PATH);
     marshaller.setMtomEnabled(true);
   }
 

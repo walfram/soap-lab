@@ -20,7 +20,7 @@ public class UploadEndpoint {
 
   private static final Logger logger = LoggerFactory.getLogger(UploadEndpoint.class);
 
-  @PayloadRoot(localPart = "UploadFileRequest", namespace = Namespace.NAMESPACE)
+  @PayloadRoot(localPart = "UploadFileRequest", namespace = Namespace.URI)
   @ResponsePayload
   public UploadFileResponse upload(
       @RequestPayload UploadFileRequest request,

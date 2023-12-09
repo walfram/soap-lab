@@ -44,7 +44,7 @@ class UploadTest {
       SoapMessage soapMessage = (SoapMessage)message;
       SoapHeader header = soapMessage.getSoapHeader();
 
-      SoapHeaderElement clientHeader = header.addHeaderElement(new QName(Namespace.NAMESPACE, "client"));
+      SoapHeaderElement clientHeader = header.addHeaderElement(new QName(Namespace.URI, "client"));
       clientHeader.setText("some-client-name");
     });
     
