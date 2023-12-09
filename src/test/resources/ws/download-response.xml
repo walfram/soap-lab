@@ -1,0 +1,20 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pets="http://soap.lab/pets">
+  <SOAP-ENV:Header>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <pets:DownloadFileResponse>
+      <pets:items>
+        <pets:fileId>1</pets:fileId>
+        <pets:content>ZmlsZS1jb250ZW50Ojox</pets:content>
+      </pets:items>
+      <pets:items>
+        <pets:fileId>2</pets:fileId>
+        <pets:content>ZmlsZS1jb250ZW50Ojoy</pets:content>
+      </pets:items>
+      <pets:items>
+        <pets:fileId>3</pets:fileId>
+        <pets:content>ZmlsZS1jb250ZW50Ojoz</pets:content>
+      </pets:items>
+    </pets:DownloadFileResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

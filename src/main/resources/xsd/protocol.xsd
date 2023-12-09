@@ -29,9 +29,32 @@
   <xs:element name="UploadFileResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="fileId" type="xs:string" />
+        <xs:element name="fileId" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  
+
+  <xs:element name="DownloadFileRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="fileIds" type="xs:string" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="DownloadFileItem">
+    <xs:sequence>
+      <xs:element name="fileId" type="xs:string"/>
+      <xs:element name="content" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="DownloadFileResponse">
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element name="items" type="DownloadFileItem" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
 </xs:schema>
