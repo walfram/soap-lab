@@ -1,13 +1,11 @@
 package org.soaplab.ws.endpoint;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.ws.test.server.ResponseMatchers.noFault;
 import static org.springframework.ws.test.server.ResponseMatchers.soapEnvelope;
 import static org.springframework.ws.test.server.ResponseMatchers.validPayload;
 
-import jakarta.activation.DataHandler;
 import java.io.IOException;
 import org.junit.jupiter.api.Test;
 import org.soaplab.config.WsConfig;

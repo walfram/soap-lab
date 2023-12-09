@@ -1,4 +1,4 @@
-package org.soaplab.ws;
+package org.soaplab.ws.endpoint;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
@@ -29,9 +29,9 @@ import org.springframework.ws.soap.SoapMessage;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @Import(MtomClientConfig.class)
-class UploadTest {
+class UploadMtomTest {
 
-  private static final Logger logger = LoggerFactory.getLogger(UploadTest.class);
+  private static final Logger logger = LoggerFactory.getLogger(UploadMtomTest.class);
 
   @MockBean
   UploadService uploadService;
