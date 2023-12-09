@@ -15,8 +15,6 @@ public class StatusEndpoint {
 
   private static final Logger logger = LoggerFactory.getLogger(StatusEndpoint.class);
   
-//  private static final String NAMESPACE = "http://soap.lab/pets";
-
   @PayloadRoot(localPart = "StatusRequest", namespace = Namespace.NAMESPACE)
   @ResponsePayload
   public StatusResponse status(@RequestPayload StatusRequest request) {

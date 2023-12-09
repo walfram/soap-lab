@@ -44,7 +44,7 @@ public class MarshallingProcessorTest {
   }
 
   @Test
-  public void test() throws Exception {
+  public void test() {
     MessageContext messageContext = mock(MessageContext.class);
 
     SaajSoapMessage saajSoapMessageMock = mock(SaajSoapMessage.class);
@@ -56,10 +56,8 @@ public class MarshallingProcessorTest {
     MethodParameter methodParameter = mock(MethodParameter.class);
 
     assertDoesNotThrow(() -> {
-      Object argument = processor.resolveArgument(messageContext, methodParameter);
+      processor.resolveArgument(messageContext, methodParameter);
     });
-
-//    assertNotNull(argument);
   }
 
 }

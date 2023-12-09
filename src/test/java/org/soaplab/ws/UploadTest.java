@@ -52,15 +52,12 @@ class UploadTest {
     DataHandler content = new DataHandler(dataSource);
     request.setContent(content);
 
-    Object response = client.getWebServiceTemplate().marshalSendAndReceive(request, new WebServiceMessageCallback() {
-      @Override
-      public void doWithMessage(WebServiceMessage message) throws IOException, TransformerException {
-        SoapMessage soapMessage = (SoapMessage)message;
-        SoapHeader header = soapMessage.getSoapHeader();
+    Object response = client.getWebServiceTemplate().marshalSendAndReceive(request, message -> {
+      SoapMessage soapMessage = (SoapMessage)message;
+      SoapHeader header = soapMessage.getSoapHeader();
 
-        SoapHeaderElement clientHeader = header.addHeaderElement(new QName(Namespace.NAMESPACE, "client"));
-        clientHeader.setText("some-client-name");
-      }
+      SoapHeaderElement clientHeader = header.addHeaderElement(new QName(Namespace.NAMESPACE, "client"));
+      clientHeader.setText("some-client-name");
     });
     
     logger.debug("response = {}", response);
