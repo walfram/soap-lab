@@ -1,7 +1,7 @@
-<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pets="http://soap.lab/pets">
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:protocol="http://soap.lab/protocol">
   <SOAP-ENV:Header>
   </SOAP-ENV:Header>
   <SOAP-ENV:Body>
-    <pets:StatusRequest />
+    <protocol:StatusRequest />
   </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

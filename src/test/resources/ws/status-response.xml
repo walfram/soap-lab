@@ -1,7 +1,7 @@
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
   <SOAP-ENV:Header/>
   <SOAP-ENV:Body>
-    <ns2:StatusResponse xmlns:ns2="http://soap.lab/pets">
+    <ns2:StatusResponse xmlns:ns2="http://soap.lab/protocol">
       <ns2:code>200</ns2:code>
       <ns2:message>OK</ns2:message>
     </ns2:StatusResponse>

@@ -1,11 +1,11 @@
-<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pets="http://soap.lab/pets">
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:protocol="http://soap.lab/protocol">
   <SOAP-ENV:Header>
   </SOAP-ENV:Header>
   <SOAP-ENV:Body>
-    <pets:DownloadFileRequest>
-      <pets:fileIds>1</pets:fileIds>
-      <pets:fileIds>2</pets:fileIds>
-      <pets:fileIds>3</pets:fileIds>
-    </pets:DownloadFileRequest>
+    <protocol:DownloadFileRequest>
+      <protocol:fileIds>1</protocol:fileIds>
+      <protocol:fileIds>2</protocol:fileIds>
+      <protocol:fileIds>3</protocol:fileIds>
+    </protocol:DownloadFileRequest>
   </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

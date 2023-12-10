@@ -1,7 +1,7 @@
 package org.soaplab.ws.endpoint;
 
-import lab.soap.pets.StatusRequest;
-import lab.soap.pets.StatusResponse;
+import lab.soap.protocol.StatusRequest;
+import lab.soap.protocol.StatusResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.soaplab.Namespace;

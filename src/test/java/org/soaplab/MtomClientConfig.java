@@ -10,7 +10,7 @@ public class MtomClientConfig {
   @Bean
   public SaajMtomClient saajClient(SaajSoapMessageFactory messageFactory, Jaxb2Marshaller marshaller) {
     SaajMtomClient client = new SaajMtomClient(messageFactory);
-    client.setDefaultUri("http://localhost:8080/ws");
+//    client.setDefaultUri("http://localhost:8080/ws");
     client.setMarshaller(marshaller);
     client.setUnmarshaller(marshaller);
     return client;

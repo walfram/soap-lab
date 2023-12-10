@@ -2,8 +2,8 @@ package org.soaplab.ws.endpoint;
 
 import static java.util.Optional.ofNullable;
 
-import lab.soap.pets.UploadFileRequest;
-import lab.soap.pets.UploadFileResponse;
+import lab.soap.protocol.UploadFileRequest;
+import lab.soap.protocol.UploadFileResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.soaplab.Namespace;
@@ -31,7 +31,7 @@ public class UploadEndpoint {
   @ResponsePayload
   public UploadFileResponse upload(
       @RequestPayload UploadFileRequest request,
-      @SoapHeader("{http://soap.lab/pets}client") SoapHeaderElement clientHeaderElement,
+      @SoapHeader("{http://soap.lab/protocol}client") SoapHeaderElement clientHeaderElement,
       MessageContext messageContext) {
     
     logger.debug("file upload request = {}", request);

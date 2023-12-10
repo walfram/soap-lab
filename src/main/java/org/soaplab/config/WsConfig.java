@@ -43,18 +43,18 @@ public class WsConfig extends WsConfigurerAdapter {
   }
 
   // https://docs.spring.io/spring-ws/docs/current/reference/html/#server-automatic-wsdl-exposure
-  @Bean(name = "pets-service")
+  @Bean(name = "soap-lab-service")
   public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema schema) {
     DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-    wsdl11Definition.setPortTypeName("PetsPort");
+    wsdl11Definition.setPortTypeName("SoapLabPort");
     wsdl11Definition.setLocationUri("/ws");
-    wsdl11Definition.setTargetNamespace("http://soap.lab/pets");
+    wsdl11Definition.setTargetNamespace("http://soap.lab/protocol");
     wsdl11Definition.setSchema(schema);
     return wsdl11Definition;
   }
 
   @Bean
-  public XsdSchema petsSchema() {
+  public XsdSchema protocolSchema() {
     return new SimpleXsdSchema(new ClassPathResource("xsd/protocol.xsd"));
   }
 

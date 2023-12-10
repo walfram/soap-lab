@@ -1,9 +1,9 @@
 package org.soaplab.ws.endpoint;
 
 import jakarta.activation.DataHandler;
-import lab.soap.pets.DownloadFileItem;
-import lab.soap.pets.DownloadFileRequest;
-import lab.soap.pets.DownloadFileResponse;
+import lab.soap.protocol.DownloadFileItem;
+import lab.soap.protocol.DownloadFileRequest;
+import lab.soap.protocol.DownloadFileResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.soaplab.Namespace;

@@ -1,20 +1,20 @@
-<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pets="http://soap.lab/pets">
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:protocol="http://soap.lab/protocol">
   <SOAP-ENV:Header>
   </SOAP-ENV:Header>
   <SOAP-ENV:Body>
-    <pets:DownloadFileResponse>
-      <pets:items>
-        <pets:fileId>1</pets:fileId>
-        <pets:content>ZmlsZS1jb250ZW50Ojox</pets:content>
-      </pets:items>
-      <pets:items>
-        <pets:fileId>2</pets:fileId>
-        <pets:content>ZmlsZS1jb250ZW50Ojoy</pets:content>
-      </pets:items>
-      <pets:items>
-        <pets:fileId>3</pets:fileId>
-        <pets:content>ZmlsZS1jb250ZW50Ojoz</pets:content>
-      </pets:items>
-    </pets:DownloadFileResponse>
+    <protocol:DownloadFileResponse>
+      <protocol:items>
+        <protocol:fileId>1</protocol:fileId>
+        <protocol:content>ZmlsZS1jb250ZW50Ojox</protocol:content>
+      </protocol:items>
+      <protocol:items>
+        <protocol:fileId>2</protocol:fileId>
+        <protocol:content>ZmlsZS1jb250ZW50Ojoy</protocol:content>
+      </protocol:items>
+      <protocol:items>
+        <protocol:fileId>3</protocol:fileId>
+        <protocol:content>ZmlsZS1jb250ZW50Ojoz</protocol:content>
+      </protocol:items>
+    </protocol:DownloadFileResponse>
   </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

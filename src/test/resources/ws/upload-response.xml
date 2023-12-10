@@ -1,7 +1,7 @@
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
   <SOAP-ENV:Header/>
   <SOAP-ENV:Body>
-    <ns2:UploadFileResponse xmlns:ns2="http://soap.lab/pets">
+    <ns2:UploadFileResponse xmlns:ns2="http://soap.lab/protocol">
       <ns2:fileId>1234</ns2:fileId>
     </ns2:UploadFileResponse>
   </SOAP-ENV:Body>

@@ -21,7 +21,7 @@ public class WsdlTest {
   
   @Test
   public void should_return_valid_wsdl() {
-    ResponseEntity<String> entity = restTemplate.getForEntity("/ws/pets-service.wsdl", String.class);
+    ResponseEntity<String> entity = restTemplate.getForEntity("/ws/soap-lab-service.wsdl", String.class);
     logger.debug("wsdl = {}", entity.getBody());
     boolean isOk = entity.getStatusCode() == HttpStatus.OK;
     assertTrue(isOk);
