@@ -1,6 +1,7 @@
 package org.soaplab.ws.endpoint;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.List;
@@ -55,6 +56,9 @@ class DownloadMtomTest {
 
     List<String> actualFileIds = items.stream().map(DownloadFileItem::getFileId).toList();
     assertEquals(fileIds, actualFileIds);
+
+    boolean hasNullContent = items.stream().anyMatch(item -> item.getContent() == null);
+    assertFalse(hasNullContent);
   }
   
 }
